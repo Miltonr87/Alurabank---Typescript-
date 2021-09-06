@@ -2,7 +2,7 @@ import { NegociacaoController } from "./models/negociacao-controller.js";
 const controller = new NegociacaoController();
 const form = document.querySelector('.form');
 form.addEventListener('submit', (e) => {
-    e.preventDefault;
+    e.preventDefault();
     controller.adiciona();
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////
