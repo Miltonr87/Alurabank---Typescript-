@@ -6,7 +6,13 @@ export class NegociacaoController {
         this.inputValor = document.querySelector('#valor');
     }
     adiciona() {
-        const negociacao = new Negociacao(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
+        const exp = /-/g;
+        // -> atribuindo uma expressão regular para encontrar "-"
+        const date = new Date(this.inputData.value.replace(exp, ','));
+        // -> procura todo mundo que tem traço e substitui por vírgula lá na expressão regular
+        const quantidade = parseInt(this.inputQuantidade.value);
+        const valor = parseFloat(this.inputValor.value);
+        const negociacao = new Negociacao(date, quantidade, valor);
         console.log(negociacao);
     }
 }
